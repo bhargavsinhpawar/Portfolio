@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .bg-body {
+            margin: 20px 0;
+            background-color: #f1dede !important;
+        }
+
+        .bg-body h2 {
+            color: #800101;
+            text-align: center;
+            font-weight: 7 00;
+            font-size: 35px;
+            text-decoration: underline;
+        }
+
+        .btn {
+            position: relative;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-weight: 700;
+            transition: .5s;
+            overflow: hidden;
+            border: 2px solid #000000;
+            background-color: transparent;
+            color: #000000;
+        }
+
+        .btn:hover {
+            border: 2px solid #000000;
+            color: white;
+        }
+
+        .btn-1 {
+            border: 2px solid blue;
+            background-color: transparent;
+            color: blue;
+        }
+
+        .btn-1:hover {
+            background-color: blue;
+        }
+
+        .btn-2 {
+            border: 2px solid red;
+            background-color: transparent;
+            color: red;
+        }
+
+        .btn-2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background-color: red;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-2:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-3 {
+            border: 2px solid #00800b;
+            background-color: transparent;
+            color: #00800b;
+        }
+
+        .btn-3::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #00800b;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-3:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-4 {
+            border: 2px solid #800075;
+            background-color: transparent;
+            color: #800075;
+        }
+
+        .btn-4::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 0%;
+            width: 100%;
+            background-color: #800075;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-4:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-5 {
+            border: 2px solid #801e00;
+            background-color: transparent;
+            color: #801e00;
+        }
+
+        .btn-5::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 0%;
+            width: 100%;
+            background-color: #801e00;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-5:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-6 {
+            border: 2px solid #008080;
+            background-color: transparent;
+            color: #008080;
+        }
+
+        .btn-6::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 0%;
+            width: 0%;
+            background-color: #008080;
+            z-index: -1;
+            overflow: hidden;
+            transition: 1s;
+        }
+
+        .btn-6:hover::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-7::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            height: 0%;
+            width: 0%;
+            background-color: #000000;
+            z-index: -1;
+            transition: 1s;
+            overflow: hidden;
+        }
+
+        .btn-7:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-8 {
+            border: 2px solid #ff6a00;
+            background-color: transparent;
+            color: #ff6a00;
+        }
+
+        .btn-8::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 0%;
+            width: 0%;
+            background-color: #ff6a00;
+            z-index: -1;
+            overflow: hidden;
+            transition: 1s;
+        }
+
+        .btn-8:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-9 {
+            border: 2px solid #1eff00;
+            background-color: transparent;
+            color: #1eff00;
+        }
+
+        .btn-9::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            height: 0%;
+            width: 0%;
+            background-color: #41bb31;
+            z-index: -1;
+            overflow: hidden;
+            transition: 1s;
+        }
+
+        .btn-9:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-10 {
+            border: 2px solid #ff00dd;
+            background-color: transparent;
+            color: #ff00dd;
+        }
+
+        .btn-10::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            height: 0%;
+            width: 0%;
+            background-color: #ff00dd;
+            z-index: -1;
+            overflow: hidden;
+            transition: 1s;
+        }
+
+        .btn-10:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-11::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0%;
+            width: 0%;
+            background-color: blue;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-11:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-11::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 0%;
+            width: 0%;
+            background-color: blue;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-11:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-12::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 0%;
+            width: 0%;
+            background-color: red;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-12:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-12::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 0%;
+            width: 0%;
+            background-color: red;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-12:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-13::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #00800b;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-13:hover::before {
+            transform: rotate(180deg);
+            width: 100%;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+
+        .btn-14::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #800075;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-14:hover::before {
+            transform: rotate(-170deg);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-15::before {
+            content: '';
+            position: absolute;
+            right: -100%;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            background-color: #801e00;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-15:hover::before {
+            rotate: 360deg;
+            left: 0;
+            right: 0;
+        }
+
+        .btn-16::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            background-color: #801e00;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .btn-16:hover::before {
+            rotate: 360deg;
+            left: 0;
+            right: 0;
+        }
+
+        .btn-17::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: #000000;
+            z-index: -1;
+            transition: 1s;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .btn-17:hover::before {
+            height: 180%;
+        }
+
+        .btn-18::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: #ff6a00;
+            z-index: -1;
+            transition: 1s;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .btn-18:hover::before {
+            height: 180%;
+        }
+
+        .btn-19::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #41bb31;
+            z-index: -1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-19:hover::before {
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-20::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            height: 0%;
+            width: 100%;
+            background-color: #ff00dd;
+            z-index: -1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-20:hover::before {
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-21::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            height: 0%;
+            width: 100%;
+            background-color: #0050b9;
+            z-index: -1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-21:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-21::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            height: 0%;
+            width: 100%;
+            background-color: #0050b9;
+            z-index: -1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-21:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-22::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 100%;
+            width: 0%;
+            background-color: #ffd900;
+            z-index: -1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-22:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-22::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            height: 100%;
+            width: 0%;
+            background-color: #ffd900;
+            z-index: -1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-22:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-23 {
+            color: white;
+        }
+
+        .btn-23:hover {
+            color: #000000;
+        }
+
+        .btn-23::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background-color: #ff0000;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-23:hover::before {
+            right: 50%;
+            top: 50%;
+            width: 0%;
+            height: 0%;
+        }
+
+        .btn-24 {
+            color: #000000;
+        }
+
+        .btn-24:hover {
+            color: white;
+        }
+
+        .btn-24::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 100%;
+            width: 200%;
+            z-index: -1;
+            background-color: #00ff37;
+            transform: skew(65deg) translate(75%, 0%);
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-24:hover::before {
+            transform: skew(65deg) translate(25%, 0%);
+        }
+
+        .btn-25 {
+            color: #000000;
+        }
+
+        .btn-25:hover {
+            color: white;
+        }
+
+        .btn-25::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 100%;
+            width: 200%;
+            z-index: -1;
+            background-color: #ff00d4;
+            transform: skew(65deg) translate(-25%, 0%);
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-25:hover::before {
+            transform: skew(65deg) translate(25%, 0%);
+        }
+
+        .btn-26 {
+            color: #000000;
+        }
+
+        .btn-26:hover {
+            color: white;
+        }
+
+        .btn-26::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 100%;
+            width: 200%;
+            z-index: -1;
+            background-color: #001aff;
+            transform: skew(-65deg) translate(-25%, 0%);
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-26:hover::before {
+            transform: skew(-65deg) translate(25%, 0%);
+        }
+
+
+        .btn-27:hover {
+            color: #000000;
+        }
+
+        .btn-27::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            height: 100%;
+            width: 200%;
+            z-index: -1;
+            background-color: #ffae00;
+            transform: skew(-65deg) translate(75%, 0%);
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-27:hover::before {
+            transform: skew(-65deg) translate(25%, 0%);
+        }
+
+
+        /* BTN Border */
+        .btn-28 {
+            border: none;
+            background-color: #0ea578;
+            color: #000000;
+        }
+
+        .btn-28:hover {
+            border: none;
+            background-color: #0ea578;
+            color: black;
+        }
+
+        .btn-28::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            height: 0%;
+            border-left: 2px solid #000000;
+            width: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-28:hover::before {
+            top: 0;
+            border-left: 2px solid #000000;
+            height: 100%;
+        }
+
+        .btn-28::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            height: 0%;
+            border-right: 2px solid #000000;
+            width: 100%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-28:hover::after {
+            top: 0;
+            border-right: 2px solid #000000;
+            height: 100%;
+        }
+
+        .btn-29 {
+            border: none;
+            background-color: #db4024;
+            color: #000000;
+        }
+
+        .btn-29:hover {
+            border: none;
+            background-color: #db4024;
+            color: black;
+        }
+
+        .btn-29::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0%;
+            border-top: 2px solid #000000;
+            width: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-29:hover::before {
+            left: 0;
+            border-top: 2px solid #000000;
+            width: 100%;
+        }
+
+        .btn-29::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0%;
+            height: 0%;
+            border-bottom: 2px solid #000000;
+            width: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-29:hover::after {
+            left: 0;
+            border-bottom: 2px solid #000000;
+            width: 100%;
+        }
+
+        .btn-30 {
+            border: none;
+            background-color: #168f06;
+            color: #000000;
+        }
+
+        .btn-30:hover {
+            border: none;
+            background-color: #168f06;
+            color: #000000;
+        }
+
+        .btn-30::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-30:hover::before {
+            left: 0;
+            top: 0;
+            border-left: 2px solid #000000;
+            border-top: 2px solid #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-30::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            height: 0%;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-30:hover::after {
+            left: 0;
+            bottom: 0;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            height: 100%;
+            width: 100%;
+        }
+
+        .btn-31 {
+            border: none;
+            background-color: #ffbb00;
+            color: #000000;
+        }
+
+        .btn-31:hover {
+            border: none;
+            background-color: #ffbb00;
+            color: #000000;
+        }
+
+        .btn-31::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            width: 0%;
+            height: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-31:hover::before {
+            border-left: 2px solid #000000;
+            border-top: 2px solid #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-31::after {
+            content: '';
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 0%;
+            height: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-31:hover::after {
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            height: 100%;
+            width: 100%;
+        }
+
+        .btn-32 {
+            border: none;
+            background-color: #28f1ff;
+            color: #000000;
+        }
+
+        .btn-32:hover {
+            border: none;
+            background-color: #28f1ff;
+            color: #000000;
+
+        }
+
+        .btn-32::before {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-32:hover::before {
+            border-left: 2px solid #000000;
+            border-top: 2px solid #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-32::after {
+            content: '';
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 0%;
+            height: 0%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-32:hover::after {
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            height: 100%;
+            width: 100%;
+        }
+
+        .btn-33 {
+            border: none;
+            background-color: #7425db;
+            color: #000000;
+        }
+
+        .btn-33:hover {
+            border: none;
+            background-color: #7425db;
+            color: #000000;
+        }
+
+        .btn-33::before {
+            content: '';
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-33:hover::before {
+            left: 50%;
+            top: 50%;
+            border-left: 2px solid #000000;
+            border-top: 2px solid #000000;
+            width: 0%;
+            height: 0%;
+        }
+
+        .btn-33::after {
+            content: '';
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .btn-33:hover::after {
+            left: 50%;
+            bottom: 50%;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            height: 0%;
+            width: 0%;
+        }
+
+        .btn-34 {
+            position: relative;
+            border: 2px solid #000000;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-weight: 700;
+            transition: .5s;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        .btn-34:hover {
+            color: black;
+            box-shadow: 0 0 5px 2px rgb(0, 0, 0);
+        }
+
+        .btn-35 {
+            position: relative;
+            border: 2px solid #000000;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-weight: 700;
+            transition: .5s;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        .btn-35:hover {
+            color: black;
+            box-shadow: 3px 3px 5px rgb(0, 0, 0);
+        }
+
+        .btn-36 {
+            position: relative;
+            border: 2px solid #000000;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-weight: 700;
+            transition: .5s;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        .btn-36:hover {
+            color: black;
+            box-shadow: -2px -2px 5px rgb(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body class="bg-body">
+    <h2>BUTTON EFFECTS</h2>
+    <div class="container-fluid">
+        <div class="row border border-1 border-dark">
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-1">Effect 1</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-2">Effect 2</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-3">Effect 3</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-4">Effect 4</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-5">Effect 5</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-6">Effect 6</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-7">Effect 7</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-8">Effect 8</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-9">Effect 9</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-10">Effect 10</button>
+            </div>
+
+            <!-- 11 to 20 -->
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-11">Effect 11</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-12">Effect 12</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-13">Effect 13</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-14">Effect 14</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-15">Effect 15</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-16">Effect 16</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-17">Effect 17</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-18">Effect 18</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-19">Effect 19</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-20">Effect 20</button>
+            </div>
+
+            <!-- 21 to 30 -->
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-21">Effect 21</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-22">Effect 22</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-23">Effect 23</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-24">Effect 24</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-25">Effect 25</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-26">Effect 26</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-27">Effect 27</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-28">Effect 28</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-29">Effect 29</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-30">Effect 30</button>
+            </div>
+
+            <!-- 31 to 40 -->
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-31">Effect 31</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-32">Effect 32</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-33">Effect 33</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-34">Effect 34</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-35">Effect 35</button>
+            </div>
+            <div class="col-4 text-center p-2 border border-1 border-dark">
+                <button class="btn btn-36">Effect 36</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
