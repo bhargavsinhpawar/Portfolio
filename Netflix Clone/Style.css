@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+:root {
+    --red: #e50914;
+}
+
+.main {
+    background-image: url('assets/Netflix_BG.jpg');
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.main .box {
+    background-color: black;
+    opacity: 0.5;
+    height: 120vh;
+}
+
+.logo-image {
+    position: fixed;
+    top: 2%;
+}
+
+.nav-button:first-child {}
+
+.nav-button> :nth-child(2) {
+    background-color: var(--red);
+    color: white;
+
+}
